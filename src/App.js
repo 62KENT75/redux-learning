@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { increment } from './store/actions';
 import { decrement } from './store/actions';
 import { addCustomerAction, deleteCustomerAction } from './store/customersReducer';
+import { fetchCustomers } from './asyncAction/customers';
 // import { useState } from 'react';
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <button onClick={() => dispatch(decrement())}>DECREMENT</button>
         <button onClick={() => addCustomer(prompt())}>Add client</button>
         <button onClick={() => dispatch(decrement())}>Delete client</button>
+        <button onClick={() => dispatch(fetchCustomers())}>Add clients from base</button>
         {/* <button onClick={() => setScreenName(1)}>Toggle</button> */}
       </div>
       {customers.length > 0 ?
